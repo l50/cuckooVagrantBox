@@ -15,12 +15,12 @@ Vagrant.configure(2) do |config|
                    ]
     end
   end
-  config.vm.provision :shell, :path => "scripts/cuckooautoinstall/cuckooautoinstall.sh"
-
   config.vm.provision "shell", :inline => <<-SHELL
   apt-get update
   apt-get install -y puppet
   SHELL
+
+  config.vm.provision :shell, :path => "scripts/cuckooautoinstall/cuckooautoinstall.sh" 
 
   config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = "manifests"
