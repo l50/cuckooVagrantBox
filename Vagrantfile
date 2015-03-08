@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "cyplo/ubuntu-gnome-utopic-gui"
+  config.vm.box_url = "https://vagrantcloud.com/cyplo/boxes/ubuntu-gnome-utopic-gui"
   config.puppet_install.puppet_version = :latest
 
   config.vm.define :malwarrior do |malwarrior|
@@ -11,7 +12,7 @@ Vagrant.configure(2) do |config|
       vm.customize [
                        "modifyvm", :id,
                        "--memory", 2048,
-                       "--cpus", "2"
+                       "--cpus", "1"
                    ]
     end
   end
