@@ -1,7 +1,10 @@
 # Cuckoo Vagrant Box
 This is used to build a cuckoo vm which can be used for malware analysis.
-### Installation of a cuckoo box
-UNM specific instructions:
+
+### Prerequisites
+Download vagrant from here: http://www.vagrantup.com/downloads.html
+## Installation of a cuckoo box
+### UNM specific instructions:
 Set up VNC and get access to a trucks machine. If VNC is too painful to use then give teamviwer a shot by setting it up on the malwarrior box:
 ```sh
 $ vagrant ssh
