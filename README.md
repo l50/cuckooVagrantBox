@@ -7,7 +7,7 @@ This is used to build a cuckoo vm which can be used for malware analysis.
 3. Download and install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads
 
 ### UNM specific instructions:
-Set up VNC and get access to a trucks machine. If VNC is too painful to use then give teamviwer a shot by setting it up on the malwarrior box:
+Set up VNC and get access to a trucks machine. If VNC is too painful to use then give TeamViewer a shot by setting it up on the malwarrior box:
 ```sh
 $ vagrant ssh
 $ wget http://www.teamviewer.com/download/teamviewer_linux.deb
@@ -32,8 +32,7 @@ Open the VirtualBox GUI and uncheck 3D acceleration under the graphics settings 
 $ vagrant up
 ```
 
-Once the machine is finished building (you might get an SSH timeout, who knows why), go to the open GUI window and shut down the machine (if you haven't given it more resources due to the aforementioned error, otherwise disregard this).
-Go ahead and hook the machine up with 4 cores and 4096 MB of RAM and reboot the machine with the **vagrant up** command. Open a terminal window and get to work:
+If you have not already modified the resources of the machine, once it is finished building (you might get an SSH timeout, who knows why), go to the open GUI window and shut down the machine. Hook the machine up with 4 cores and 4096 MB of RAM and reboot the machine with the **vagrant up** command. Open a terminal window and get to work:
 
 ```sh
 $ sudo -s
