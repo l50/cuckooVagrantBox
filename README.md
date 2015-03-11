@@ -1,9 +1,9 @@
 # Cuckoo Vagrant Box
 This is used to build a cuckoo vm which can be used for malware analysis.
 
-### Prerequisites
+## Prerequisites
 Download vagrant from here: http://www.vagrantup.com/downloads.html
-## Installation of a cuckoo box
+
 ### UNM specific instructions:
 Set up VNC and get access to a trucks machine. If VNC is too painful to use then give teamviwer a shot by setting it up on the malwarrior box:
 ```sh
@@ -15,6 +15,7 @@ $ sudo apt-get install gdebi
 $ sudo gdebi teamviewer_linux.deb
 ```
 
+### Installation of a cuckoo box
 ```sh
 $ git clone https://github.com/l50/cuckooVagrantBox.git
 $ cd cuckooVagrantBox
