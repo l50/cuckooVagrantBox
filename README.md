@@ -4,6 +4,7 @@ This is used to build a cuckoo vm which can be used for malware analysis.
 ## Prerequisites
 1. Download vagrant from here: http://www.vagrantup.com/downloads.html
 2. To install on a debian-based platform, use dpkg -i
+3. Download and install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads
 
 ### UNM specific instructions:
 Set up VNC and get access to a trucks machine. If VNC is too painful to use then give teamviwer a shot by setting it up on the malwarrior box:
