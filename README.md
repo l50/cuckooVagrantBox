@@ -28,7 +28,7 @@ Wait while the VM is downloaded, which could take a bit of time. Eventually, the
 If you're on the CS machines you will get an error. No worries.
 Open the VirtualBox GUI and uncheck 3D acceleration under the graphics settings for the machine. Go ahead and hook the machine up with 4 cores and 4096 MB of RAM while you're in there. Finally, run:
 ```sh
-$vagrant up
+$ vagrant up
 ```
 
 Once the machine is finished building (you might get an SSH timeout, who knows why), go to the open GUI window and shut down the machine (if you haven't given it more resources due to the aforementioned error, otherwise disregard this).
