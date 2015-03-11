@@ -59,7 +59,11 @@ You should be in **VirtualBox Manager** at this point.
 1. Click start
 2. Click Control Panel
 3. Turn off Windows Firewall
-4. Set the ip settings as follows for malwarrior: 
+4. Click Network Connections
+5. Double click on Local Area Connection
+6. Click Properties
+7. Double click TCP/IP
+8. Set the ip settings as follows for malwarrior: 
 
 **IP address:** 192.168.56.130 
 
@@ -77,7 +81,7 @@ $ sudo -s
 # cd ~/xpTransfer
 # wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
 # wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
-# cp ../cuckoo/agent/agent.py
+# cp ../cuckoo/agent/agent.py .
 ```
 ** Go back to the windows box**
 
