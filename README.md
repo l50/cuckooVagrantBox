@@ -4,12 +4,12 @@ This is used to build a cuckoo vm which can be used for malware analysis.
 UNM specific instructions:
 Set up VNC and get access to a trucks machine. If VNC is too painful to use then give teamviwer a shot by setting it up on the malwarrior box:
 ```sh
-$vagrant ssh
-$wget http://www.teamviewer.com/download/teamviewer_linux.deb
-$sudo dpkg --add-architecture i386
-$sudo apt-get update
-$sudo apt-get install gdebi
-$sudo gdebi teamviewer_linux.deb
+$ vagrant ssh
+$ wget http://www.teamviewer.com/download/teamviewer_linux.deb
+$ sudo dpkg --add-architecture i386
+$ sudo apt-get update
+$ sudo apt-get install gdebi
+$ sudo gdebi teamviewer_linux.deb
 ```
 
 ```sh
@@ -30,11 +30,11 @@ Once the machine is finished building (you might get an SSH timeout, who knows w
 Go ahead and hook the machine up with 4 cores and 4096 MB of RAM and reboot the machine with the **vagrant up** command. Open a terminal window and get to work:
 
 ```sh
-$sudo -s
-#mkdir /home/vagrant/xpTransfer
-#mkdir /vagrant/vm
-#unzip ~/IE6.XP.For.Mac.VirtualBox.zip -d /vagrant/vm
-#/usr/lib/virtualbox/VirtualBox
+$ sudo -s
+# mkdir /home/vagrant/xpTransfer
+# mkdir /vagrant/vm
+# unzip ~/IE6.XP.For.Mac.VirtualBox.zip -d /vagrant/vm
+# /usr/lib/virtualbox/VirtualBox
 ```
 
 ### Set up XP box for analysis
