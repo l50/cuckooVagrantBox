@@ -58,7 +58,35 @@ You should be in **VirtualBox Manager** at this point.
 ### Configure XP box
 1. Click start
 2. Click Control Panel
-3. Set the ip settings as follows:
+3. Turn off Windows Firewall
+4. Set the ip settings as follows for malwarrior: 
+
+**IP address:** 192.168.56.130 
+
+**Subnet Mask:** 255.255.255.0
+
+**Default gateway:** 192.168.56.1
+
+You can leave the DNS Server blank.
+
+Lastly, we need to get the cuckoo agent, pil and python-2.7.9 installed.
+
+**Go to the malwarrior box**
+```sh
+$ sudo -s
+# cd ~/xpTransfer
+# wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
+# wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
+# cp ../cuckoo/agent/agent.py
+```
+** Go back to the windows box**
+
+Go to My Computer
+Go to xpTransfer under Network Drives
+Pull all three files to the Desktop
+1. Run python-2.7.9.smi
+2. Run PIL-1.1.7.win32-py2.7.exe
+3. Run agent.py
 
 License
 ----
