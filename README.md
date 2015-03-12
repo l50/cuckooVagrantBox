@@ -55,7 +55,8 @@ You should be in **VirtualBox Manager** at this point.
 1. Click File
 2. Click Import Appliance
 3. Input the following for the import path: /vagrant/vm/IE6.WinXP/IE6 - WinXP.ova 
-  NOTE: If the folder /vagrant/vm does not exist, go back to the terminal in the Linux VM and run:
+  
+      NOTE: If the folder /vagrant/vm does not exist, go back to the terminal in the Linux VM and run:
 ```sh
       $ sudo mkdir /vagrant/vm
       $ cd /vagrant/vm
