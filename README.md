@@ -32,6 +32,12 @@ Open the VirtualBox GUI and uncheck 3D acceleration under the graphics settings 
 $ vagrant up
 ```
 
+If you have a lot of crazy errors come up at the end, you might want to try re-creating your box. Do this using the commands:
+```sh
+$ vagrant destroy
+$ vagrant up
+```
+When you open the new machine it will be locked. Hit enter and login with password: vagrant.
 Open a terminal window on the machine that comes up and get to work:
 
 ```sh
@@ -48,7 +54,15 @@ $ /usr/lib/virtualbox/VirtualBox
 You should be in **VirtualBox Manager** at this point.
 1. Click File
 2. Click Import Appliance
-3. Input the following for the import path: /vagrant/vm/IE6.WinXP/IE6 - WinXP.ova
+3. Input the following for the import path: /vagrant/vm/IE6.WinXP/IE6 - WinXP.ova 
+  NOTE: If the folder /vagrant/vm does not exist, go back to the terminal in the Linux VM and run:
+```sh
+      $ sudo mkdir /vagrant/vm
+      $ cd /vagrant/vm
+      $ sudo curl -O https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE6/Mac/IE6.XP.For.Mac.VirtualBox.zip
+      $ unzip IE6.XP.For.Mac.VirtualBox.zip
+```
+      Then try the import again.
 4. Click import
 5. Go into the settings for the box
 6. Change the name to **xp**
