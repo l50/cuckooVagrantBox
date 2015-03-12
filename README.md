@@ -113,9 +113,8 @@ Set the following paramters like so:
 
 machines = xp
 
+This appears directly above the **label** field:
 [xp]
-
-\# Specify ...
 
 label = xp
 
@@ -132,6 +131,7 @@ Set the following paramters like so:
 
 machines = xp
 
+This appears directly above the **label** field:
 [xp] 
 
 Comments and such
@@ -160,7 +160,9 @@ $ cd ~/cuckoo/utils
 $ python submit.py <file name>
 
 ### To start the web server to view results
+
 Open new tab
+
 ```sh
 $ sudo -s
 $ cd ~/cuckoo/utils/
