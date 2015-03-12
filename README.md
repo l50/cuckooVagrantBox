@@ -80,17 +80,19 @@ Lastly, we need to get the cuckoo agent, pil and python-2.7.9 installed.
 1. Go to My Computer
 2. Go to xpTransfer under Network Drives
 3. Pull all three files to the Desktop
-4. Double click python-2.7.9.msi
-5. Double click PIL-1.1.7.win32-py2.7.exe
-6. Double click agent.py
+4. Double click python-2.7.9.msi and follow prompts to install
+5. Double click PIL-1.1.7.win32-py2.7.exe and follow prompts to install
+6. Double click agent.py - this will open a terminal window, leave it open
 
 Go back to the VirtualBox Manager on the malwarrior machine
 1. Click Snapshots
 2. Ctrl-shift-s to take a snapshot, or click the camera
 3. Rename the snapshot **Snapnum1** and click OK
-4. Power off the Windows machine
-5. Click Restore Snapshot
-6. Unclick Create Snapshot (do not create another) and click **Restore**
+
+###To create our snapshot for analysis
+1. Power off the Windows machine
+2. Click Restore Snapshot
+3. Unclick Create Snapshot (do not create another) and click **Restore**
 
 ```sh
 $ sudo -s
