@@ -188,7 +188,18 @@ curl http://localhost:8090/tasks/report/1 > <output_name>.txt
 Use this documentation for the commands:
 http://cuckoo.readthedocs.org/en/latest/usage/api/
 
+Resources
+---
+
+Cuckoo - https://github.com/cuckoobox/cuckoo
+
+Vagrant - https://github.com/mitchellh/vagrant
+
+David Reguera's Cuckoo Auto Install Script - https://github.com/buguroo/
+
 License
 ----
 
 Apache
+
+
