@@ -32,13 +32,15 @@ Open the VirtualBox GUI and uncheck 3D acceleration under the graphics settings 
 $ vagrant up
 ```
 
-If you have not already modified the resources of the machine, once it is finished building (you might get an SSH timeout, who knows why), go to the open GUI window and shut down the machine. Hook the machine up with 4 cores and 4096 MB of RAM and reboot the machine with the **vagrant up** command. Open a terminal window and get to work:
+Open a terminal window on the machine that comes up and get to work:
 
 ```sh
 $ sudo -s
 # mkdir /home/vagrant/xpTransfer
-# mkdir /vagrant/vm
-# unzip ~/IE6.XP.For.Mac.VirtualBox.zip -d /vagrant/vm
+# cd ~/xpTransfer
+# wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
+# wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
+# cp ../cuckoo/agent/agent.py .
 # /usr/lib/virtualbox/VirtualBox
 ```
 
@@ -75,16 +77,6 @@ You can leave the DNS Server blank.
 
 Lastly, we need to get the cuckoo agent, pil and python-2.7.9 installed.
 
-**Go to the malwarrior box**
-```sh
-$ sudo -s
-# cd ~/xpTransfer
-# wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
-# wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
-# cp ../cuckoo/agent/agent.py .
-```
-** Go back to the windows box**
-
 Go to My Computer
 Go to xpTransfer under Network Drives
 Pull all three files to the Desktop
@@ -92,6 +84,82 @@ Pull all three files to the Desktop
 2. Run PIL-1.1.7.win32-py2.7.exe
 3. Run agent.py
 
+Go back to the VirtualBox Manager on the malwarrior machine
+1. Click Snapshots
+2. Ctrl-shift-s to take a snapshot, or click the camera
+3. Rename the snapshot **Snapnum1** and click OK
+4. Power off the Windows machine
+5. Click Restore Snapshot
+6. Unclick Create Snapshot (do not create another) and click **Restore**
+
+```sh
+$ sudo -s
+$ cd ~/cuckoo/conf
+$ sublime cuckoo.conf
+```
+
+Set version_check = off
+
+**Exit the file**
+```sh
+$ sublime kvm.conf
+```
+
+Set the following paramters like so:
+
+[kvm]
+
+\# Specify ...
+
+machines = xp
+
+[xp]
+
+\# Specify ...
+
+label = xp
+
+(Obviously this will change depending on the IP of the machine you're on)
+ip = 192.168.56.130
+
+**Exit the file**
+
+```sh
+$ sublime virtualbox.conf
+```
+
+Set the following paramters like so:
+
+machines = xp
+
+[xp] 
+
+Comments and such
+
+label = xp
+
+ip = 192.168.56.130
+
+**Exit the file**
+
+### Time to start Cuckoo
+
+As root:
+
+```sh
+# cd ~/cuckoo
+# python cuckoo.py
+```
+
+### Let's submit a file
+Open a new tab
+
+```sh
+# sudo -s
+# cd ~/cuckoo/utils
+# python submit.py <file name>
+
+```
 License
 ----
 
