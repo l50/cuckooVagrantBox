@@ -32,14 +32,16 @@ Open the VirtualBox GUI and uncheck 3D acceleration under the graphics settings 
 $ vagrant up
 ```
 
-If you have not already modified the resources of the machine, once it is finished building (you might get an SSH timeout, who knows why), go to the open GUI window and shut down the machine. Hook the machine up with 4 cores and 4096 MB of RAM and reboot the machine with the **vagrant up** command. Open a terminal window and get to work:
+Open a terminal window on the machine that comes up and get to work:
 
 ```sh
 $ sudo -s
-# mkdir /home/vagrant/xpTransfer
-# mkdir /vagrant/vm
-# unzip ~/IE6.XP.For.Mac.VirtualBox.zip -d /vagrant/vm
-# /usr/lib/virtualbox/VirtualBox
+$ mkdir /home/vagrant/xpTransfer
+$ cd ~/xpTransfer
+$ wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
+$ wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
+$ cp ../cuckoo/agent/agent.py .
+$ /usr/lib/virtualbox/VirtualBox
 ```
 
 ### Set up XP box for analysis
@@ -58,7 +60,133 @@ You should be in **VirtualBox Manager** at this point.
 ### Configure XP box
 1. Click start
 2. Click Control Panel
-3. Set the ip settings as follows:
+3. Turn off Windows Firewall
+4. Click Network Connections
+5. Double click on Local Area Connection
+6. Click Properties
+7. Double click TCP/IP
+8. Set the ip settings as follows for malwarrior: 
+
+**IP address:** 192.168.56.130 
+
+**Subnet Mask:** 255.255.255.0
+
+**Default gateway:** 192.168.56.1
+
+You can leave the DNS Server blank.
+
+Lastly, we need to get the cuckoo agent, pil and python-2.7.9 installed.
+
+1. Go to My Computer
+2. Go to xpTransfer under Network Drives
+3. Pull all three files to the Desktop
+4. Double click python-2.7.9.msi and follow prompts to install
+5. Double click PIL-1.1.7.win32-py2.7.exe and follow prompts to install
+6. Double click agent.py - this will open a terminal window, leave it open
+
+Go back to the VirtualBox Manager on the malwarrior machine
+1. Click Snapshots
+2. Ctrl-shift-s to take a snapshot, or click the camera
+3. Rename the snapshot **Snapnum1** and click OK
+
+###To create our snapshot for analysis
+1. Power off the Windows machine
+2. Click Restore Snapshot
+3. Unclick Create Snapshot (do not create another) and click **Restore**
+
+```sh
+$ sudo -s
+$ cd ~/cuckoo/conf
+$ sublime cuckoo.conf
+```
+
+Set version_check = off
+
+**Exit the file**
+```sh
+$ sublime kvm.conf
+```
+
+Set the following paramters like so:
+
+[kvm]
+
+\# Specify ...
+
+machines = xp
+
+This appears directly above the **label** field and may appear as **cuckoo1**:
+[xp]
+
+label = xp
+
+(Obviously this will change depending on the IP of the machine you're on)
+ip = 192.168.56.130
+
+**Exit the file**
+
+```sh
+$ sublime virtualbox.conf
+```
+
+Set the following paramters like so:
+
+machines = xp
+
+This appears directly above the **label** field and may appear as **cuckoo1**:
+[xp] 
+
+label = xp
+
+ip = 192.168.56.130
+
+**Exit the file**
+
+### Time to start Cuckoo
+
+As root:
+
+```sh
+$ cd ~/cuckoo
+$ python cuckoo.py
+```
+
+### Let's submit a file
+Open a new tab
+
+```sh
+$ sudo -s
+$ cd ~/cuckoo/utils
+$ python submit.py <file name>
+
+### To start the web server to view results
+
+Open new tab
+
+```sh
+$ sudo -s
+$ cd ~/cuckoo/utils/
+$ python web.py
+```
+
+**Open web browser** and navigate to http://localhost:8080 to view the dashboard.
+
+### To start the API server for REST interactions
+Open new tab
+```sh
+$ sudo -s
+$ cd ~/cuckoo/utils/
+$ python api.py
+```
+
+This will bind to port 8090
+
+On the malwarrior machine, to get output from a submitted byte file: 
+
+curl http://localhost:8090/tasks/report/1 > <output_name>.txt
+
+Use this documentation for the commands:
+http://cuckoo.readthedocs.org/en/latest/usage/api/
 
 License
 ----
