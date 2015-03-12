@@ -158,10 +158,11 @@ echo $OS $VER $ARCH $CODENAME
     #enable mongodb end
 
     # Download XP box 
-    cd /vagrant/vm
-    curl -O https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE6/Mac/IE6.XP.For.Mac.VirtualBox.zip
-    cd /vagrant/vm
-    unzip *zip
+    sudo mkdir /vagrant/vm
+    sudo cd /vagrant/vm
+    sudo curl -O https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE6/Mac/IE6.XP.For.Mac.VirtualBox.zip
+    sudo cd /vagrant/vm
+    sudo unzip *zip
 
     # sudo -s
     # su cuckoo
