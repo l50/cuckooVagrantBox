@@ -168,7 +168,7 @@ $ sudo -s
 ```
 
 **Open web browser**
-
+Navigate to http://localhost:8080 to view the dashboard.
 
 ### To start the API server for REST interactions
 Open new tab
