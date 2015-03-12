@@ -169,8 +169,7 @@ $ cd ~/cuckoo/utils/
 $ python web.py
 ```
 
-**Open web browser**
-Navigate to http://localhost:8080 to view the dashboard.
+**Open web browser** and navigate to http://localhost:8080 to view the dashboard.
 
 ### To start the API server for REST interactions
 Open new tab
