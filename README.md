@@ -36,12 +36,12 @@ Open a terminal window on the machine that comes up and get to work:
 
 ```sh
 $ sudo -s
-# mkdir /home/vagrant/xpTransfer
-# cd ~/xpTransfer
-# wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
-# wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
-# cp ../cuckoo/agent/agent.py .
-# /usr/lib/virtualbox/VirtualBox
+$ mkdir /home/vagrant/xpTransfer
+$ cd ~/xpTransfer
+$ wget http://effbot.org/downloads/PIL-1.1.7.win32-py2.7.exe
+$ wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
+$ cp ../cuckoo/agent/agent.py .
+$ /usr/lib/virtualbox/VirtualBox
 ```
 
 ### Set up XP box for analysis
@@ -77,12 +77,12 @@ You can leave the DNS Server blank.
 
 Lastly, we need to get the cuckoo agent, pil and python-2.7.9 installed.
 
-Go to My Computer
-Go to xpTransfer under Network Drives
-Pull all three files to the Desktop
-1. Run python-2.7.9.smi
-2. Run PIL-1.1.7.win32-py2.7.exe
-3. Run agent.py
+1. Go to My Computer
+2. Go to xpTransfer under Network Drives
+3. Pull all three files to the Desktop
+4. Double click python-2.7.9.msi
+5. Double click PIL-1.1.7.win32-py2.7.exe
+6. Double click agent.py
 
 Go back to the VirtualBox Manager on the malwarrior machine
 1. Click Snapshots
@@ -147,24 +147,24 @@ ip = 192.168.56.130
 As root:
 
 ```sh
-# cd ~/cuckoo
-# python cuckoo.py
+$ cd ~/cuckoo
+$ python cuckoo.py
 ```
 
 ### Let's submit a file
 Open a new tab
 
 ```sh
-# sudo -s
-# cd ~/cuckoo/utils
-# python submit.py <file name>
+$ sudo -s
+$ cd ~/cuckoo/utils
+$ python submit.py <file name>
 
 ### To start the web server to view results
 Open new tab
 ```sh
 $ sudo -s
-# cd ~/cuckoo/utils/
-# python web.py
+$ cd ~/cuckoo/utils/
+$ python web.py
 ```
 
 **Open web browser**
@@ -174,8 +174,8 @@ Navigate to http://localhost:8080 to view the dashboard.
 Open new tab
 ```sh
 $ sudo -s
-# cd ~/cuckoo/utils/
-# python api.py
+$ cd ~/cuckoo/utils/
+$ python api.py
 ```
 
 This will bind to port 8090
