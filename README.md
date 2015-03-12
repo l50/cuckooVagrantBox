@@ -159,7 +159,34 @@ Open a new tab
 # cd ~/cuckoo/utils
 # python submit.py <file name>
 
+### To start the web server to view results
+Open new tab
+```sh
+$ sudo -s
+# cd ~/cuckoo/utils/
+# python web.py
 ```
+
+**Open web browser**
+
+
+### To start the API server for REST interactions
+Open new tab
+```sh
+$ sudo -s
+# cd ~/cuckoo/utils/
+# python api.py
+```
+
+This will bind to port 8090
+
+On the malwarrior machine, to get output from a submitted byte file: 
+
+curl http://localhost:8090/tasks/report/1 > <output_name>.txt
+
+Use this documentation for the commands:
+http://cuckoo.readthedocs.org/en/latest/usage/api/
+
 License
 ----
 
