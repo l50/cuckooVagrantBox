@@ -115,7 +115,7 @@ Set the following paramters like so:
 
 machines = xp
 
-This appears directly above the **label** field:
+This appears directly above the **label** field and may appear as **cuckoo1**:
 [xp]
 
 label = xp
@@ -133,10 +133,8 @@ Set the following paramters like so:
 
 machines = xp
 
-This appears directly above the **label** field:
+This appears directly above the **label** field and may appear as **cuckoo1**:
 [xp] 
-
-Comments and such
 
 label = xp
 
