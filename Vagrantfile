@@ -11,11 +11,11 @@ Vagrant.configure(2) do |config|
       vm.customize [
                        "modifyvm", :id,
                        "--memory", 2048,
-                       "--cpus", "1"
+                       "--cpus", "2"
                    ]
     end
   end
-  config.vm.provision :shell, :path => "scripts/cuckooautoinstall/cuckooautoinstall.sh"
+  config.vm.provision :shell, :path => "scripts/cuckooautoinstall.sh"
 
   #config.vm.provision "shell", :inline => <<-SHELL
   # apt-get update
