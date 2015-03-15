@@ -171,6 +171,7 @@ Open a new tab
 $ sudo -s
 $ cd ~/cuckoo/utils
 $ python submit.py <file name>
+```
 
 ### To start the web server to view results
 
@@ -186,7 +187,8 @@ $ python web.py
 
 ### To start the API server for REST interactions
 Open new tab
-```sh
+
+```{.sh}
 $ sudo -s
 $ cd ~/cuckoo/utils/
 $ python api.py
@@ -200,6 +202,33 @@ curl http://localhost:8090/tasks/report/1 > <output_name>.txt
 
 Use this documentation for the commands:
 http://cuckoo.readthedocs.org/en/latest/usage/api/
+
+
+### API Script
+This repo now has a simple script to pull and filter JSON information from
+cuckoo's api. It is located in the `json_tools` directory. 
+
+
+For running samples through cuckoo, put all the malware files in a directory
+called `samples` in the cuckoo directory. Make a folder in samples called
+`json` and another in `json` called `processed`.
+
+You must modify the script at the following places with the correct
+directories:
+
+```{.sh}
+## EDIT these paths
+CUCKOOUTILS=/cuckoo/utils/
+SAMPLEPATH=/cuckoo/samples/
+```
+
+you can run the script as: 
+
+```{.sh}
+sh get_json.sh
+```
+
+and modify as ness.
 
 Resources
 ---
