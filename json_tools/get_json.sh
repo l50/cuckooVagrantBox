@@ -4,9 +4,6 @@
 CUCKOOUTILS=/cuckoo/utils/
 SAMPLEPATH=/cuckoo/samples/
 
-# starts the API if not started
-python $CUCKOOUTILS/api.py &
-
 cd $SAMPLEPATH
 
 FILES=./*.bytes
