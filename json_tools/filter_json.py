@@ -9,9 +9,11 @@ for fi in file_list:
     with open(fi) as f:
         json_data = f.read()
         data = json.loads(json_data)
-        if data['strings'] != None:
+        if 'strings' in data:
+            print("deleting strings from " + fi)
             del data['strings']
 
     with open(fi, "w") as f:
+        print("Rewriting " + fi)
         write_data = json.dumps(data, indent=2)
         f.write(write_data)
