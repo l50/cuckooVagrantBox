@@ -1,9 +1,11 @@
 import json as json
 from os import listdir
 from os.path import isfile, join
+import glob
 
-path = './'
-file_list = [ f for f in listdir(path) if isfile(join(path,f)) ]
+# path = './'
+# file_list = [ f for f in listdir(path) if isfile(join(path,f)) ]
+file_list = glob.glob('*.json')
 
 for fi in file_list:
     with open(fi) as f:
