@@ -221,8 +221,10 @@ directories:
 CUCKOOUTILS=/cuckoo/utils/
 SAMPLEPATH=/cuckoo/samples/
 ```
+Put the python script (`filter_json.py`) in the `json` folder and start the
+cuckoo web api.
 
-you can run the script as: 
+you can then run the script as: 
 
 ```{.sh}
 sh get_json.sh
